@@ -1,18 +1,18 @@
-/** @format */
+import './App.css'
 
-import * as S from "./components/Header/header_style.jsx";
+import React, { useState } from "react";
 
-import Header from "./components/Header/Header.jsx";
-import Main from "./components/Main/Main.jsx";
+export default function App() {
+  const [contador, setContador] = useState(0);
 
-function App() {
+  const aumentarContador = () => {
+    setContador(contador + 1);
+  };
+
   return (
-    <>
-      <S.GlobalStyle />
-      <Header />
-      <Main />
-    </>
+    <div className="App">
+      <h1>Contador: {contador}</h1>
+      <button onClick={aumentarContador}>Aumentar</button>
+    </div>
   );
 }
-
-export default App;
